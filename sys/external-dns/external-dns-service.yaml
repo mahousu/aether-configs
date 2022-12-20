@@ -4,7 +4,7 @@ metadata:
   name: external-dns
 spec:
   type: LoadBalancer
-  loadBalancerIP: 10.92.2.166
+  loadBalancerIP: 10.5.0.1
   selector:
     k8s-app: "external-dns"
   ports:

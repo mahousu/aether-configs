@@ -1,14 +1,14 @@
 global:
   storageClass: hostpath
 auth:
-  adminUser: admin
-  adminPassword: adminpassword
-  managementPassword: adminpassword
+  adminUser: onfadmin
+  adminPassword: 5Gtb@ctl
+  managementPassword: 5Gtb@ctl
 postgresql:
   auth:
-    postgresPassword: adminpassword
-    username: postgres
-    password: adminpassword
+    postgresPassword: 5Gtb@ctl
+    username: onfadmin
+    password: 5Gtb@ctl
   persistence:
     enabled: true
     storageClass: hostpath
@@ -211,7 +211,7 @@ keycloakConfigCli:
             "enabled": true,
             "firstName": "ONF",
             "lastName": "Admin",
-            "email": "support@opennetworking.org",
+            "email": "anri-admins@nist.gov",
             "emailVerified": true,
             "groups": [
               "AetherROCAdmin",
@@ -220,16 +220,19 @@ keycloakConfigCli:
             "credentials": [
               {
                 "type": "password",
-                "value": "changeme"
+                "value": "5Gtb@ctl"
               }
             ]
           },
-          {
+          # This dummy account is mentioned in the documentation, so
+          # I left it in. There were also other dummy accounts, but I
+          # figured I could leave them out.
+          {    
             "username": "alicea",
             "enabled": true,
             "firstName": "Alice",
             "lastName": "Admin",
-            "email": "alicea@opennetworking.org",
+            "email": "anri-admins@nist.gov",
             "emailVerified": true,
             "groups": [
               "AetherROCAdmin"
@@ -240,42 +243,8 @@ keycloakConfigCli:
                 "value": "changeme"
               }
             ]
-          },
-          {
-            "username": "daisyd",
-            "enabled": true,
-            "firstName": "Daisy",
-            "lastName": "Duke",
-            "email": "daisyd@opennetworking.org",
-            "emailVerified": true,
-            "groups": [
-              "EnterpriseAdmin",
-              "ase-enterprise"
-            ],
-            "credentials": [
-              {
-                "type": "password",
-                "value": "changeme"
-              }
-            ]
-          },
-          {
-            "username": "elmerf",
-            "enabled": true,
-            "firstName": "Elmer",
-            "lastName": "Fudd",
-            "email": "elmerf@opennetworking.org",
-            "emailVerified": true,
-            "groups": [
-              "ase-enterprise"
-            ],
-            "credentials": [
-              {
-                "type": "password",
-                "value": "changeme"
-              }
-            ]
           }
+
         ]
       }
 ingress:

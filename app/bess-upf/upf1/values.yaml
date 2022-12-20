@@ -4,13 +4,13 @@ servicemonitor:
 config:
   upf:
     access:
-      ip: "10.92.4.3/25"
-      gateway: "10.92.4.126"
+      ip: "10.5.1.2/24"
+      gateway: "10.5.1.1"
     core:
-      ip: "10.92.4.131/25"
-      gateway: "10.92.4.254"
+      ip: "10.5.2.2/24"
+      gateway: "10.5.2.1"
     enb:
-      subnet: "10.92.3.128/25"
+      subnet: "10.5.3.0/24"
     cfgFiles:
       upf.json:
         cpiface:

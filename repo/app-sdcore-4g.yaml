@@ -2,9 +2,9 @@ kind: GitRepo
 apiVersion: fleet.cattle.io/v1alpha1
 metadata:
   name: sdcore-4g
-  namespace: fleet-default
+  namespace: fleet-local
 spec:
-  repo: https://github.com/opennetworkinglab/aether-configs
+  repo: https://github.com/mahousu/aether-configs
   branch: main
   paths:
     - app/cassandra

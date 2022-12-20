@@ -16,7 +16,7 @@ omec-control-plane:
       cfgFiles:
         subscriber_mapping.json: {}
     mme:
-      externalIP: 10.92.2.167
+      externalIP: 10.5.0.1
       serviceType: ClusterIP
       cfgFiles:
         config.json:

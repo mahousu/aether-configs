@@ -83,7 +83,7 @@
       url: mongodb://mongodb
     amf:
       ngapp:
-        externalIp: 10.92.2.168
+        externalIp: 10.5.0.1
       cfgFiles:
         amfcfg.conf:
           configuration:

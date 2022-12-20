@@ -14,14 +14,14 @@ onos-classic:
           "device:leaf1": {
             "segmentrouting": {
               "ipv4NodeSid": 34,
-              "ipv4Loopback": "10.92.2.34",
-              "routerMac": "00:00:0A:5C:02:22",
+              "ipv4Loopback": "10.5.0.1",
+              "routerMac": "E4:3D:1A:4D:9F:72",
               "isEdgeRouter": true,
               "adjacencySids": []
             },
-            "basic": {
+            "basic": {  # @@This should probably be p4 switch??
               "name": "leaf1",
-              "managementAddress": "grpc://10.92.2.34:9339?device_id=1",
+              "managementAddress": "grpc://10.5.0.1:9339?device_id=1",
               "driver": "stratum-tofino",
               "pipeconf": "org.stratumproject.fabric-upf-int.montara_sde_9_7_0",
               "locType": "grid",
@@ -34,8 +34,8 @@ onos-classic:
           "device:leaf1/12": {
             "interfaces": [
               {
-                "ips": [
-                  "10.92.3.126/25"
+                "ips": [ # @@ 126->6, 4.244->2.1??
+                  "10.5.3.6/24"
                 ],
                 "vlan-untagged": 51,
                 "name": "mgmt-enp65s0f1"
@@ -46,9 +46,9 @@ onos-classic:
             "interfaces": [
               {
                 "ips": [
-                  "10.92.3.126/25",
-                  "10.92.4.126/25",
-                  "10.92.4.254/25"
+                  "10.5.3.6/24",
+                  "10.5.1.6/24",
+                  "10.5.2.1/24"
                 ],
                 "vlan-untagged": 51,
                 "name": "node3-enp65s0f1"
@@ -59,9 +59,9 @@ onos-classic:
             "interfaces": [
               {
                 "ips": [
-                  "10.92.3.126/25",
-                  "10.92.4.126/25",
-                  "10.92.4.254/25"
+                  "10.5.3.6/24",
+                  "10.5.1.6/24",
+                  "10.5.2.1/24"
                 ],
                 "vlan-untagged": 51,
                 "name": "node2-enp65s0f1"
@@ -72,9 +72,9 @@ onos-classic:
             "interfaces": [
               {
                 "ips": [
-                  "10.92.3.126/25",
-                  "10.92.4.126/25",
-                  "10.92.4.254/25"
+                  "10.5.3.6/24",
+                  "10.5.1.6/24",
+                  "10.5.2.1/24"
                 ],
                 "vlan-untagged": 51,
                 "name": "node1-enp65s0f1"
@@ -85,7 +85,7 @@ onos-classic:
             "interfaces": [
               {
                 "ips": [
-                  "10.92.3.254/25"
+                  "10.5.3.1/24"
                 ],
                 "vlan-untagged": 51,
                 "name": "eNB1"
@@ -96,7 +96,7 @@ onos-classic:
             "interfaces": [
               {
                 "ips": [
-                  "10.92.3.254/25"
+                  "10.5.3.1/24"
                 ],
                 "vlan-untagged": 51,
                 "name": "gNB1"
@@ -119,22 +119,22 @@ onos-classic:
             }
           },
           "org.onosproject.route-service": {
-            "routes": [
+            "routes": [ # @@ No idea what these should be ....
               {
                 "prefix": "0.0.0.0/0",
-                "nextHop": "10.92.3.1"
+                "nextHop": "10.5.3.1"
               },
               {
-                "prefix": "10.250.1.0/24",
-                "nextHop": "10.92.4.131"
+                "prefix": "10.240.1.0/24",
+                "nextHop": "10.5.2.6"
               },
               {
-                "prefix": "10.250.2.0/24",
-                "nextHop": "10.92.4.132"
+                "prefix": "10.240.2.0/24",
+                "nextHop": "10.5.2.7"
               },
               {
-                "prefix": "10.250.3.0/24",
-                "nextHop": "10.92.4.133"
+                "prefix": "10.240.3.0/24",
+                "nextHop": "10.5.2.8"
               }
             ]
           },
@@ -143,7 +143,7 @@ onos-classic:
               {
                 "dhcpServerConnectPoint": "device:leaf1/12",
                 "serverIps": [
-                  "10.92.3.1"
+                  "10.5.3.1"
                 ]
               }
             ]

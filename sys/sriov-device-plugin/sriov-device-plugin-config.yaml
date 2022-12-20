@@ -39,5 +39,22 @@ data:
             "drivers": ["vfio-pci"]
           }
         }
+        {
+          "resourcePrefix": "broadcom.com",
+          "resourceName": "broadcom_sriov_netdevice",
+          "selectors": {
+            "vendors": ["14e4"],
+            "devices": ["16d8"],
+            "drivers": ["bnxt_en"]
+          }
+        }
+        {
+          "resourcePrefix": "broadcom.com",
+          "resourceName": "broadcom_sriov_vfio",
+          "selectors": {
+            "vendors": ["14e4"],
+            "drivers": ["vfio-pci"]
+          }
+        }
       ]
     }

@@ -5,8 +5,8 @@ telegraf:
           command: ["/tmp/sdfabric_telegraf.sh"]
           signal: "STDIN"
       - cisco_telemetry_gnmi:
-          addresses:
-            - 10.92.2.34:9339
+          addresses: # @@@Using this as a standin for now
+            - 10.5.0.1:9339
           redial: 10s
       - cisco_telemetry_gnmi.subscription:
           name: stratum_counters
@@ -14,8 +14,8 @@ telegraf:
           path: /interfaces/interface[name=*]/state/counters
           sample_interval: 5000ns
           subscription_mode: sample
-      - ping:
-          urls: ["10.92.3.129", "10.92.3.1", "10.92.3.5"]
+      - ping:   # @@Not sure what these are supposed to be ....
+          urls: ["10.5.3.2", "10.5.3.3", "10.5.3.4"]
           arguments: ["-i", "5.0", "-c", "10"]
 onos:
   server: sdfabric-onos-classic-hs
